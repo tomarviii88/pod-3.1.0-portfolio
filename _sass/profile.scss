@@ -1,30 +1,11 @@
 .profile {
   background-color: #1d539f !important;
-  // background-color: red !important;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 5%;
-  // h1 {
-  //   font-size: 2.5em;
-  //   font-weight: 700;
-  //   color: white;
-  //   margin-bottom: 30px;
-  //   //transition: all 0.3s;
-  //   animation: type 4s steps(60, end);
-  // }
 
-  // h1::after {
-  //   content: '';
-  //   position: relative;
-  //   left: 0px;
-  //   height: 100%;
-  //   width: 100%;
-  //   border-left: 2px solid ebba34;
-  //   animation: typing 1.5s steps(10) infinite;
-  // }
-
-  img {
+  .profile-img {
     border-radius: 50%;
     max-width: 100%;
     max-height: 100%;
@@ -35,6 +16,52 @@
     margin-bottom: 20px;
     height: 250px;
     transition: all 0.3s;
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 0px;
+
+    .profile-status {
+      border-radius: 50%;
+      position: absolute;
+      right: 30px;
+      bottom: 40px;
+      box-sizing: border-box;
+      background-color: #ebba34;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      transition: all 0.5s;
+
+      .status {
+        z-index: 200;
+        width: 20px !important;
+        height: 20px !important;
+      }
+
+      p {
+        display: none;
+      }
+    }
+
+    .profile-status:hover {
+      width: 100px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 5px;
+      right: 0px;
+
+      p {
+        display: block;
+        align-self: center;
+        margin: auto;
+        font-size: 12px;
+      }
+    }
   }
 
   .wrapper {
@@ -100,6 +127,11 @@
   .profile .profile-picture {
     height: 55vw;
     min-height: 140px;
+
+    .profile-status {
+      right: 20px;
+      bottom: 30px;
+    }
   }
   .profile .wrapper .static-txt {
     font-size: 10vw;

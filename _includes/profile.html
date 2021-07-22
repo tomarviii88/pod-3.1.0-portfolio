@@ -1,18 +1,17 @@
 <div class="profile">
   <div class="profile-picture">
-    <img src="./assets/img/logo.jpg" />
+    <img class="profile-img" src="./assets/img/logo.jpg" />
+    <div class="profile-status">
+      <img class="status" src="./assets/img/profile/target.svg" />
+      <p>Focusing</p>
+    </div>
   </div>
   <div class="wrapper">
     <div class="static-txt">I'm</div>
     <ul class="dynamic-txts">
       {% for item in site.data.personal.title %}
       <li><span>{{ item }}</span></li>
-      <!-- <li><span>Will Russell</span></li>
-      <li><span>Developer</span></li>
-      <li><span>Designer</span></li>
-      <li><span>MLH Fellow</span></li> -->
       {% endfor %}
     </ul>
   </div>
-  <!-- <h1 class="profile-name">{{ site.title }}</h1> -->
 </div>
