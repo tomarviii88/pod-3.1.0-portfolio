@@ -5,13 +5,24 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 5%;
-  h1 {
-    font-size: 2.5em;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 30px;
-    transition: all 0.3s;
-  }
+  // h1 {
+  //   font-size: 2.5em;
+  //   font-weight: 700;
+  //   color: white;
+  //   margin-bottom: 30px;
+  //   //transition: all 0.3s;
+  //   animation: type 4s steps(60, end);
+  // }
+
+  // h1::after {
+  //   content: '';
+  //   position: relative;
+  //   left: 0px;
+  //   height: 100%;
+  //   width: 100%;
+  //   border-left: 2px solid ebba34;
+  //   animation: typing 1.5s steps(10) infinite;
+  // }
 
   img {
     border-radius: 50%;
@@ -25,6 +36,61 @@
     height: 250px;
     transition: all 0.3s;
   }
+
+  .wrapper {
+    display: inline-flex;
+
+    .static-txt {
+      color: #fff;
+      font-size: 2.5em;
+      font-weight: 400;
+    }
+
+    .dynamic-txts {
+      margin-left: 0px;
+      height: 3.5em;
+      line-height: 60px;
+      overflow: hidden;
+
+      li {
+        color: #ebba34;
+        list-style: none;
+        font-size: 2.5em;
+        font-weight: 600;
+        position: relative;
+        top: 0px;
+        animation: slide 6s steps(4) infinite;
+
+        span {
+          position: relative;
+        }
+
+        span::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          border-left: 2px solid #ebba34;
+          animation: typing 1.5s steps(10) infinite;
+          background: #1d539f;
+        }
+      }
+    }
+  }
+
+  @keyframes slide {
+    100% {
+      top: -6em;
+    }
+  }
+
+  @keyframes typing {
+    100% {
+      left: 100%;
+      margin: 0 -35px 0 35px;
+    }
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -34,5 +100,20 @@
   .profile .profile-picture {
     height: 55vw;
     min-height: 140px;
+  }
+  .profile .wrapper .static-txt {
+    font-size: 10vw;
+  }
+
+  .profile .wrapper .dynamic-txts {
+    font-size: 10vw;
+    //line-height: 10vw;
+    line-height: 15vw;
+    height: 12vw;
+    overflow: hidden;
+  }
+
+  .profile .wrapper .dynamic-txts li {
+    font-size: 10vw;
   }
 }
