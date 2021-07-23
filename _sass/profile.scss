@@ -3,15 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  h1 {
-    font-size: 2.5em;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 30px;
-    transition: all 0.3s;
-  }
+  margin-bottom: 5%;
 
-  img {
+  .profile-img {
     border-radius: 50%;
     max-width: 200%;
     max-height: 200%;
@@ -25,6 +19,107 @@
     margin-bottom: 20px;
     height: 250px;
     transition: all 0.3s;
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 0px;
+
+    .profile-status {
+      border-radius: 50%;
+      position: absolute;
+      right: 30px;
+      bottom: 40px;
+      box-sizing: border-box;
+      background-color: #ebba34;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      transition: all 0.5s;
+
+      .status {
+        z-index: 200;
+        width: 20px !important;
+        height: 20px !important;
+      }
+
+      p {
+        display: none;
+      }
+    }
+
+    .profile-status:hover {
+      width: 100px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 5px;
+      right: 0px;
+
+      p {
+        display: block;
+        align-self: center;
+        margin: auto;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .wrapper {
+    display: inline-flex;
+
+    .static-txt {
+      color: #fff;
+      font-size: 2.5em;
+      font-weight: 400;
+    }
+
+    .dynamic-txts {
+      margin-left: 0px;
+      height: 3.5em;
+      line-height: 60px;
+      overflow: hidden;
+
+      li {
+        color: #ebba34;
+        list-style: none;
+        font-size: 2.5em;
+        font-weight: 600;
+        position: relative;
+        top: 0px;
+        animation: slide 6s steps(4) infinite;
+
+        span {
+          position: relative;
+        }
+
+        span::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          border-left: 2px solid #ebba34;
+          animation: typing 1.5s steps(10) infinite;
+          background: #1d539f;
+        }
+      }
+    }
+  }
+
+  @keyframes slide {
+    100% {
+      top: -6em;
+    }
+  }
+
+  @keyframes typing {
+    100% {
+      left: 100%;
+      margin: 0 -35px 0 35px;
+    }
   }
 }
 
@@ -37,5 +132,25 @@
   .profile .profile-picture {
     height: 55vw;
     min-height: 140px;
+
+    .profile-status {
+      right: 20px;
+      bottom: 30px;
+    }
+  }
+  .profile .wrapper .static-txt {
+    font-size: 10vw;
+  }
+
+  .profile .wrapper .dynamic-txts {
+    font-size: 10vw;
+    //line-height: 10vw;
+    line-height: 15vw;
+    height: 12vw;
+    overflow: hidden;
+  }
+
+  .profile .wrapper .dynamic-txts li {
+    font-size: 10vw;
   }
 }

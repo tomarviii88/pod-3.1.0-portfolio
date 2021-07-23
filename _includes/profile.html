@@ -1,6 +1,17 @@
 <div class="profile">
-    <div class="profile-picture">
-        <img src="./assets/img/rhino.png">
+  <div class="profile-picture">
+    <img class="profile-img" src="./assets/img/logo.jpg" />
+    <div class="profile-status">
+      <img class="status" src="./assets/img/profile/target.svg" />
+      <p>Focusing</p>
     </div>
-    <h1>{{ site.title }}</h1>
+  </div>
+  <div class="wrapper">
+    <div class="static-txt">I'm</div>
+    <ul class="dynamic-txts">
+      {% for item in site.data.personal.title %}
+      <li><span>{{ item }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>
